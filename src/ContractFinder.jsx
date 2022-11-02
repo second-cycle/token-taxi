@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useContractRead, useAccount, erc20ABI } from 'wagmi'
 
 
-
+//--
 
 
 const ContractFinder = (contractAddress) => {
