@@ -17,7 +17,7 @@ const client = createClient({
   webSocketProvider,
 });
 
-const conAddy = "0x27c70cd1946795b66be9d954418546998b546634"
+const conAddy = "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
         <SwitchNetwork />
       </div>
       <div>
-        <TokenBalance contractAddress={"0x27c70cd1946795b66be9d954418546998b546634"} />
+        <TokenBalance contractAddress={conAddy} />
         <TransferERC20 />
       </div>
     </WagmiConfig>

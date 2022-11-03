@@ -5,14 +5,14 @@ import { useAccount, useBalance } from 'wagmi'
 //--
 
 
-const TokenBalance = (contractAddress) => {
+const TokenBalance = ({contractAddress}) => {
 
     const { address } = useAccount()
     const erc20Address = contractAddress
     
     const { data, isError, isLoading } = useBalance({
         addressOrName: address,
-        token: "0x27c70cd1946795b66be9d954418546998b546634"
+        token: erc20Address
       })
      
     if (isLoading) return <div>Fetching balance…</div>
