@@ -5,7 +5,7 @@ import {usePrepareContractWrite, useContractWrite, useWaitForTransaction, erc20A
       address: "0x27c70cd1946795b66be9d954418546998b546634",
       abi: erc20ABI,
       functionName: 'transfer',
-      args: ["trav.eth", 2000]
+      args: ["secondcycle.eth", 2000]
     })
     const { data, error, isError, write } = useContractWrite(config)
    
