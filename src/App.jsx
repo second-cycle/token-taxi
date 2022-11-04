@@ -1,10 +1,10 @@
 import "./App.css";
 import {WagmiConfig, createClient, configureChains, chain, allChains} from 'wagmi'
 import { publicProvider } from "wagmi/providers/public";
-import Profile from "./components/Connector";
-import TokenBalance from "./components/TokenBalance";
+import TokenInfo from "./components/TokenInfo";
 import TransferERC20 from "./components/TransferERC20";
-import SwitchNetwork from "./components/SwitchNetwork";
+import Header from "./components/Header";
+import TokenSearchBar from "./components/TokenSearchBar";
 
 const { chains, provider, webSocketProvider } = configureChains(
   allChains,
@@ -20,15 +20,17 @@ const client = createClient({
 const conAddy = "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
 
 function App() {
+
+
+
   return (
     <WagmiConfig client={client}>
       <div className="App">
-        <Profile />
-        <SwitchNetwork />
+        <Header />
       </div>
       <div>
-        <TokenBalance contractAddress={conAddy} />
-        <TransferERC20 />
+        <TokenSearchBar />
+        
       </div>
     </WagmiConfig>
   );

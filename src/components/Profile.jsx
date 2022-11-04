@@ -11,12 +11,12 @@ function Profile() {
  const { disconnect } = useDisconnect()
 
  if (isConnected) return (
-    <>
-        <div>Connected to {ensName ?? address}</div>
-        <button onClick={() => disconnect()}>Disconnect</button>
+    <>      
         <>
             {chain && <div>Connected to {chain.name}</div>}
         </>
+        <button onClick={() => disconnect()}>Disconnect</button>
+        <div>Connected to {ensName ?? address}</div>
     </>
     )
 

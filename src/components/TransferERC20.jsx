@@ -1,11 +1,11 @@
 import {usePrepareContractWrite, useContractWrite, useWaitForTransaction, erc20ABI} from 'wagmi'
    
-  function TransferERC20() {
+  function TransferERC20({tokenAddress, recipient, sendValue}) {
     const {config, error: prepareError, isError: isPrepareError, } = usePrepareContractWrite({
-      address: "0x27c70cd1946795b66be9d954418546998b546634",
+      address: tokenAddress,
       abi: erc20ABI,
       functionName: 'transfer',
-      args: ["secondcycle.eth", 2000]
+      args: [recipient, sendValue]
     })
     const { data, error, isError, write } = useContractWrite(config)
    
