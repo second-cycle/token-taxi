@@ -1,4 +1,5 @@
 import "./App.css";
+import { MantineProvider } from "@mantine/core";
 import {WagmiConfig, createClient, configureChains, chain, allChains} from 'wagmi'
 import { publicProvider } from "wagmi/providers/public";
 import TokenInfo from "./components/TokenInfo";
@@ -24,15 +25,17 @@ function App() {
 
 
   return (
-    <WagmiConfig client={client}>
-      <div className="App">
-        <Header />
-      </div>
-      <div>
-        <TokenSearchBar />
-        
-      </div>
-    </WagmiConfig>
+    <MantineProvider withGlobalStyles withNormalizeCSS>
+      <WagmiConfig client={client}>
+        <div className="bg-indigo-200 w-full h-screen">
+          <Header />
+        </div>
+        <div>
+          <TokenSearchBar />
+          
+        </div>
+      </WagmiConfig>
+    </MantineProvider>
   );
 }
 

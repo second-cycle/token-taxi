@@ -1,4 +1,5 @@
 import {usePrepareContractWrite, useContractWrite, useWaitForTransaction, erc20ABI} from 'wagmi'
+import {Button, Stack} from '@mantine/core'
    
   function TransferERC20({tokenAddress, recipient, sendValue}) {
     const {config, error: prepareError, isError: isPrepareError, } = usePrepareContractWrite({
@@ -15,9 +16,10 @@ import {usePrepareContractWrite, useContractWrite, useWaitForTransaction, erc20A
    
     return (
       <div>
-        <button disabled={!write || isLoading} onClick={() => write()}>
+        <Stack align="center">
+        <Button disabled={!write || isLoading} onClick={() => write()}>
           {isLoading ? 'Sending...' : 'Send'}
-        </button>
+        </Button>
         {isSuccess && (
           <div>
             Successfully sent ERC20!
@@ -27,8 +29,11 @@ import {usePrepareContractWrite, useContractWrite, useWaitForTransaction, erc20A
           </div>
         )}
         {(isPrepareError || isError) && (
-          <div>Error: {(prepareError || error)?.message}</div>
+          <div>Error
+            {/* : {(prepareError || error)?.message} */}
+            </div>
         )}
+        </Stack>
       </div>
     )
   }

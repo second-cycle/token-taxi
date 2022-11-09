@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { Stack } from '@mantine/core'
 import { useAccount, useBalance, useToken } from 'wagmi'
 
 
@@ -24,8 +24,10 @@ const TokenInfo = ({contractAddress}) => {
     return (
         
         <div>
+          <Stack align="center">
           <div>{tokenName?.name}</div>
           Balance: {tokenBalance?.formatted} {tokenBalance?.symbol}
+          </Stack>
         </div>
     )
 }
