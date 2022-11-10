@@ -2,6 +2,7 @@ import { useAccount, useConnect, useDisconnect, useEnsName, useNetwork } from 'w
 import { InjectedConnector } from 'wagmi/connectors/injected'
 import {Button, Flex, Group, SimpleGrid, Stack, Text, Title} from '@mantine/core'
 
+
 const Profile = () => {
     const { address, isConnected } = useAccount()
     const { chain, chains } = useNetwork()
@@ -15,21 +16,13 @@ const Profile = () => {
    
     return (
         <div>
+            <Flex align="center" justify="center" direction="column" gap="sm" wrap="wrap">
+                <Title order={1}>Token Taxi</Title>
+                {isConnected && <div>{chain && <div>{chain.name}</div>}</div>}
+                {ensName ?? address}
+                {isConnected ? <Button onClick={() => disconnect()}>Disconnect</Button> : <Button onClick={() => connect()}>Connect Wallet</Button>}
 
-            <Group position="center">
-                <div>
-                    <Flex align="center" justify="center" direction="column" gap="sm" wrap="wrap">
-                        <Title order={1}>token.taxi</Title>
-                        {isConnected && <div>{chain && <div>{chain.name}</div>}</div>}
-                    </Flex>
-                    <Flex align="center" justify="center" direction="column" gap="sm" wrap="wrap">
-                        {isConnected ? <Button onClick={() => disconnect()}>{ensName ?? address}</Button> : <Button onClick={() => connect()}>Connect Wallet</Button>}
-                    </Flex>
-                </div>
-
-            </Group>
-
-            
+            </Flex>
         </div>
     )
    }
