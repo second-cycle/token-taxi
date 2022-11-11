@@ -6,7 +6,7 @@ import {
 } from "wagmi";
 import { Button, Stack } from "@mantine/core";
 
-function TransferERC20({ tokenAddress, recipient, amount, decimals = 18 }) {
+function SendERC20({ tokenAddress, recipient, amount, decimals = 18 }) {
     const {
         config,
         error: prepareError,
@@ -49,4 +49,4 @@ function TransferERC20({ tokenAddress, recipient, amount, decimals = 18 }) {
     );
 }
 
-export default TransferERC20;
+export default SendERC20;

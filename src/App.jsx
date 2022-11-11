@@ -1,18 +1,9 @@
 import "./App.css";
-import { MantineProvider } from "@mantine/core";
-import {
-    WagmiConfig,
-    createClient,
-    configureChains,
-    chain,
-    allChains,
-} from "wagmi";
+import { MantineProvider, Divider, Space } from "@mantine/core";
+import { WagmiConfig, createClient, configureChains, allChains } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
-import TokenInfo from "./components/TokenInfo";
-import TransferERC20 from "./components/TransferERC20";
 import Header from "./components/Header";
-import TokenSearchBar from "./components/TokenSearchBar";
-import SendTransaction from "./components/SendTransaction";
+import MainPanel from "./components/MainPanel";
 
 const { chains, provider, webSocketProvider } = configureChains(allChains, [
     publicProvider(),
@@ -24,8 +15,6 @@ const client = createClient({
     webSocketProvider,
 });
 
-const conAddy = "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2";
-
 function App() {
     return (
         <MantineProvider withGlobalStyles withNormalizeCSS>
@@ -33,8 +22,11 @@ function App() {
                 <div className="App">
                     <Header />
                 </div>
+                <Space h="xs" />
+                <Divider my="sm" />
+                <Space h="xs" />
                 <div>
-                    <TokenSearchBar />
+                    <MainPanel />
                 </div>
             </WagmiConfig>
         </MantineProvider>

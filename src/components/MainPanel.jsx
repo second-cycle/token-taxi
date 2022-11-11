@@ -1,16 +1,8 @@
-import {
-    Center,
-    Flex,
-    NumberInput,
-    Stack,
-    Text,
-    TextInput,
-    Space,
-} from "@mantine/core";
+import { Flex, Stack, TextInput, Space } from "@mantine/core";
 import { useState } from "react";
 import SendTransaction from "./SendTransaction";
 import TokenInfo from "./TokenInfo";
-import TransferERC20 from "./TransferERC20";
+import SendERC20 from "./SendERC20";
 
 const TokenSearchBar = () => {
     const [selectedToken, selectToken] = useState("");
@@ -21,7 +13,6 @@ const TokenSearchBar = () => {
         <div>
             <Flex justify="center" align="center">
                 <Stack align="center">
-                    <Space h="sm" />
                     <form>
                         <TextInput
                             placeholder="token address"
@@ -50,7 +41,7 @@ const TokenSearchBar = () => {
                         />
                     </form>
                     {selectedToken ? (
-                        <TransferERC20
+                        <SendERC20
                             tokenAddress={selectedToken}
                             recipient={selectedRecipient}
                             amount={amount}

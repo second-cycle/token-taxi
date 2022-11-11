@@ -11,10 +11,15 @@
 TODO's:
 
 -need to add WalletConnect
+
 -improve styling/layout
+
     -change color of Network text when network is changed
+
 -make send amount *10**18 (or whatever the contract decimals are)
+
 -currenlty upon successful transaction an etherscan link is provided, this needs to change to provide the block explorer for the current network
+
 -possibly a "confirm transaction" modal
 
 **currently working on function to find balances for all erc20 tokens in wallet
