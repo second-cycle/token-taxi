@@ -6,16 +6,7 @@ import {
     useNetwork,
 } from "wagmi";
 import { InjectedConnector } from "wagmi/connectors/injected";
-import {
-    Button,
-    Flex,
-    Group,
-    SimpleGrid,
-    Stack,
-    Text,
-    Title,
-} from "@mantine/core";
-import FindBalances from "./FindBalances";
+import { Button, Flex, Title } from "@mantine/core";
 
 const Profile = () => {
     const { address, isConnected } = useAccount();

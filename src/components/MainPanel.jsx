@@ -4,7 +4,7 @@ import SendTransaction from "./SendTransaction";
 import TokenInfo from "./TokenInfo";
 import SendERC20 from "./SendERC20";
 
-const TokenSearchBar = () => {
+const MainPanel = () => {
     const [selectedToken, selectToken] = useState("");
     const [amount, setAmount] = useState("");
     const [selectedRecipient, selectRecipient] = useState("");
@@ -58,4 +58,4 @@ const TokenSearchBar = () => {
     );
 };
 
-export default TokenSearchBar;
+export default MainPanel;
